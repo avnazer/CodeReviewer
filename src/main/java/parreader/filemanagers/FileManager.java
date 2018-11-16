@@ -3,24 +3,15 @@ package parreader.filemanagers;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FilenameFilter;
 import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-import model.objects.tables.OMWTable;
-
 public class FileManager {
-    private static  Logger log = Logger.getLogger(FileManager.class.getCanonicalName());
     private static final int BUFFER_SIZE = 10000;
+    private static Logger log = Logger.getLogger(FileManager.class.getCanonicalName());
 
     private FileManager() {
         super();
@@ -29,11 +20,11 @@ public class FileManager {
     public static String unZip(String parFilePath, String fileType) {
         StringBuilder parPath = new StringBuilder(parFilePath);
         String mainFolder = parPath.substring(0, parPath.indexOf(".par"));
-        
-        
-        try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(parFilePath))){
+
+
+        try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(parFilePath))) {
             ZipEntry entry = zipIn.getNextEntry();
-            
+
             while (entry != null) {
                 if (!entry.isDirectory()) {
                     new File(parPath.toString()).getParentFile().mkdirs();
@@ -45,10 +36,10 @@ public class FileManager {
                 }
                 zipIn.closeEntry();
                 entry = zipIn.getNextEntry();
-            }            
+            }
         } catch (IOException e) {
             log.severe(e.getMessage());
-            
+
         }
         return mainFolder;
 
@@ -63,8 +54,8 @@ public class FileManager {
         }
         bos.close();
     }
-    
-    public static String[] getFilesFromDirectory(String directory, String fileNameFixedPart){
+
+    public static String[] getFilesFromDirectory(String directory, String fileNameFixedPart) {
         String[] files;
         File f = new File(directory);
         FileFilter filter = new FileFilter(fileNameFixedPart);

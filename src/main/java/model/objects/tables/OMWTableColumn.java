@@ -1,32 +1,31 @@
 package model.objects.tables;
 
-import java.util.Comparator;
-
-public class OMWTableColumn  {
+public class OMWTableColumn {
     private String alias;
     private int sequence;
-    
+
     public OMWTableColumn() {
         super();
-    }
-
-    public void setAlias(String columnAlias) {
-        this.alias = columnAlias;
     }
 
     public String getAlias() {
         return alias;
     }
 
-    public void setSequence(int sequence) {
-        this.sequence = sequence;
+    public void setAlias(String columnAlias) {
+        this.alias = columnAlias;
     }
 
     public int getSequence() {
         return sequence;
     }
+
+    public void setSequence(int sequence) {
+        this.sequence = sequence;
+    }
+
     @Override
-    public String toString(){
-        return this.sequence + " - "  + this.alias;
+    public String toString() {
+        return this.sequence + " - " + this.alias;
     }
 }
