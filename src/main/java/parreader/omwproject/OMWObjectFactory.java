@@ -1,6 +1,6 @@
 package parreader.omwproject;
 
-import model.objects.OMWObject;
+import model.objects.OMWBaseObject;
 import model.objects.OMWObjectType;
 import model.objects.tables.OMWTable;
 import org.slf4j.Logger;
@@ -17,8 +17,8 @@ public final class OMWObjectFactory {
     }
 
     /* TODO: FIX! This should not receive a par path! decouple the implementation! */
-    public static OMWObject createInstance(Element elm, String parMainPath) {
-        OMWObject omwObject;
+    public static OMWBaseObject createInstance(Element elm, String parMainPath) {
+        OMWBaseObject omwObject;
         OMWObjectType type = valueOf(elm.getAttribute("type"));
 
         switch (type) {
@@ -38,7 +38,7 @@ public final class OMWObjectFactory {
                 omwObject = new OMWTable();
                 break;
             default:
-                omwObject = new OMWObject();
+                omwObject = new OMWBaseObject();
                 break;
         }
 

@@ -1,17 +1,16 @@
 package model.objects.tables;
 
-import model.objects.OMWObject;
+import model.objects.OMWBaseObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import parreader.omwproject.OMWProjectParReader;
 import parreader.omwtables.OMWTableParReader;
 
 import java.util.Comparator;
 import java.util.List;
 
-public class OMWTable extends OMWObject implements Comparator<OMWTableColumn> {
+public class OMWTable extends OMWBaseObject implements Comparator<OMWTableColumn> {
     private static final Logger LOGGER = LoggerFactory.getLogger(OMWTable.class);
-    private String alias;
+    private String prefix;
     private List<OMWTableIndex> indexes;
     private List<OMWTableColumn> columns;
 
@@ -25,12 +24,12 @@ public class OMWTable extends OMWObject implements Comparator<OMWTableColumn> {
         reader.load(this);
     }
 
-    public String getAlias() {
-        return alias;
+    public String getPrefix() {
+        return prefix;
     }
 
-    public void setAlias(String alias) {
-        this.alias = alias;
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
     }
 
     public List<OMWTableIndex> getIndexes() {
@@ -60,6 +59,6 @@ public class OMWTable extends OMWObject implements Comparator<OMWTableColumn> {
 
     @Override
     public String toString() {
-        return this.id + " - " + this.description + " - " + this.alias;
+        return this.id + " - " + this.description + " - " + this.prefix;
     }
 }

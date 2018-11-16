@@ -1,7 +1,7 @@
 package parreader.omwproject;
 
 import model.OMWProject;
-import model.objects.OMWObject;
+import model.objects.OMWBaseObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -63,13 +63,13 @@ public class OMWProjectParReader {
         this.omwProject.setObjects(this.readObjectsNodes(node.getFirstChild()));
     }
 
-    private List<OMWObject> readObjectsNodes(Node firstOMWObject) {
+    private List<OMWBaseObject> readObjectsNodes(Node firstOMWObject) {
         Node node = firstOMWObject;
-        List<OMWObject> objects = new ArrayList<OMWObject>();
+        List<OMWBaseObject> objects = new ArrayList<OMWBaseObject>();
 
         do {
             Element elm = (Element) node;
-            OMWObject omwObject = OMWObjectFactory.createInstance(elm, this.parFileDirectory);
+            OMWBaseObject omwObject = OMWObjectFactory.createInstance(elm, this.parFileDirectory);
             objects.add(omwObject);
             node = node.getNextSibling();
         } while (node != null);

@@ -1,13 +1,13 @@
 package model;
 
-import model.objects.OMWObject;
+import model.objects.OMWBaseObject;
 
 import java.util.List;
 
 public class OMWProject {
     private String id;
     private String description;
-    private List<OMWObject> objects;
+    private List<OMWBaseObject> objects;
 
     public OMWProject() {
         super();
@@ -29,15 +29,15 @@ public class OMWProject {
         this.description = description;
     }
 
-    public List<OMWObject> getObjects() {
+    public List<OMWBaseObject> getObjects() {
         return objects;
     }
 
-    public void setObjects(List<OMWObject> objects) {
+    public void setObjects(List<OMWBaseObject> objects) {
         this.objects = objects;
     }
 
-    public List<OMWObject> getObjects(String objectType) {
+    public List<OMWBaseObject> getObjects(String objectType) {
         return objects;
     }
 }
