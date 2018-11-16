@@ -13,15 +13,6 @@
         <jdk.version>1.8</jdk.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <symCore-version>1.2.1-101.1</symCore-version>
-        <symFoundation-version>101.1-1.2.1</symFoundation-version>
-        <guava-version>20.0</guava-version>
-        <jacksonCore-version>2.8.7</jacksonCore-version>
-        <jacksonDataTypeJoda-version>2.8.7</jacksonDataTypeJoda-version>
-        <jerseyAll-version>2.23.2</jerseyAll-version>
-        <gson-version>2.7</gson-version>
-        <symphony-api-version>1.0.1</symphony-api-version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
