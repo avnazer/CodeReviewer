@@ -37,8 +37,8 @@ public class OMWTableParReader {
 
     public void load(OMWTable omwTable) {
         this.omwTable = omwTable;
-        this.loadColumns(parFileDirectory + "\\DDCLMN\\");
-        this.loadKeys(parFileDirectory + "\\DDKEYH\\");
+        this.loadColumns(parFileDirectory + "/DDCLMN/");
+        this.loadKeys(parFileDirectory + "/DDKEYH/");
     }
 
 
@@ -76,7 +76,7 @@ public class OMWTableParReader {
         List<OMWTableColumn> columns = new ArrayList<OMWTableColumn>();
 
         for (String fileDir : columnFiles) {
-            File file = new File(parFileDirectory + "\\" + fileDir);
+            File file = new File(parFileDirectory  + fileDir);
             OMWTableColumn column = new OMWTableColumn();
             try {
 

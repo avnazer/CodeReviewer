@@ -56,10 +56,8 @@ public class FileManager {
     }
 
     public static String[] getFilesFromDirectory(String directory, String fileNameFixedPart) {
-        String[] files;
         File f = new File(directory);
         FileFilter filter = new FileFilter(fileNameFixedPart);
-        files = f.list(filter);
-        return files;
+        return f.list(filter);
     }
 }
