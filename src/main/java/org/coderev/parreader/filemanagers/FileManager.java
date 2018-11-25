@@ -1,63 +1,79 @@
 package org.coderev.parreader.filemanagers;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
+import java.util.Enumeration;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
+import java.util.zip.ZipFile;
 
 public class FileManager {
-    private static final int BUFFER_SIZE = 10000;
-    private static Logger log = Logger.getLogger(FileManager.class.getCanonicalName());
-
-    private FileManager() {
-        super();
-    }
-
-    public static String unZip(String parFilePath, String fileType) {
-        StringBuilder parPath = new StringBuilder(parFilePath);
-        String mainFolder = parPath.substring(0, parPath.indexOf(".par"));
-
-
-        try (ZipInputStream zipIn = new ZipInputStream(new FileInputStream(parFilePath))) {
-            ZipEntry entry = zipIn.getNextEntry();
-
-            while (entry != null) {
-                if (!entry.isDirectory()) {
-                    new File(parPath.toString()).getParentFile().mkdirs();
-                    extractFile(zipIn, parPath.toString());
-                } else {
-                    // if the entry is a directory, make the directory
-                    File dir = new File(parPath.toString());
-                    dir.mkdirs();
-                }
-                zipIn.closeEntry();
-                entry = zipIn.getNextEntry();
-            }
-        } catch (IOException e) {
-            log.severe(e.getMessage());
-
-        }
-        return mainFolder;
-
-    }
-
-    private static void extractFile(ZipInputStream zipIn, String filePath) throws IOException {
-        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
-        byte[] bytesIn = new byte[BUFFER_SIZE];
-        int read = 0;
-        while ((read = zipIn.read(bytesIn)) != -1) {
-            bos.write(bytesIn, 0, read);
-        }
-        bos.close();
-    }
+    private static final int BUFFER = 10000;
+    private static Logger LOGGER = LoggerFactory.getLogger(FileManager.class);
 
     public static String[] getFilesFromDirectory(String directory, String fileNameFixedPart) {
         File f = new File(directory);
         FileFilter filter = new FileFilter(fileNameFixedPart);
         return f.list(filter);
+    }
+
+    public void unzip(String zipFile) throws IOException {
+        ZipFile zip = new ZipFile(new File(zipFile));
+        Enumeration<? extends ZipEntry> entries = zip.entries();
+        String rootPath = getRootPath(zip);
+
+        LOGGER.info("Unzipping {}", zipFile);
+
+        while (entries.hasMoreElements()) {
+            ZipEntry entry = entries.nextElement();
+            String currentEntry = getCurrentEntryName(entry);
+            File destFile = new File(rootPath, currentEntry);
+            File destinationParent = destFile.getParentFile();
+
+            // create the parent directory structure if needed
+            destinationParent.mkdirs();
+            if (!entry.isDirectory()) {
+                BufferedInputStream is = new BufferedInputStream(zip.getInputStream(entry));
+                extractEntry(destFile, is);
+            }
+            if (currentEntry.endsWith(".zip")) {
+                unzip(destFile.getAbsolutePath());
+            }
+        }
+    }
+
+    private void makeRootDir(String rootPath) {
+        new File(rootPath).mkdir();
+    }
+
+    private String getRootPath(ZipFile zip) {
+        String zipFile = zip.getName();
+        zipFile = zipFile.substring(0, zipFile.length() - 4);
+        makeRootDir(zipFile);
+        return zipFile;
+    }
+
+    private String getCurrentEntryName(ZipEntry entry) {
+        String currentEntry = entry.getName();
+        return currentEntry.replace("\\", "/");
+    }
+
+    private void extractEntry(File destFile, BufferedInputStream is) {
+        try (
+                FileOutputStream fos = new FileOutputStream(destFile);
+                BufferedOutputStream dest = new BufferedOutputStream(fos, BUFFER)) {
+            byte data[] = new byte[BUFFER];
+            int currentByte;
+
+            // read and write until last byte is encountered
+            while ((currentByte = is.read(data, 0, BUFFER)) != -1) {
+                dest.write(data, 0, currentByte);
+            }
+        } catch (FileNotFoundException e) {
+            LOGGER.error("", e);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
