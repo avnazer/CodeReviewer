@@ -41,9 +41,7 @@ public class OMWTableTest {
 
     @Test
     public void testNumberOfIndexes() {
-        //OMWTable table = reader.map();
-        //assertTrue(table.getIndexes().size() == 4);
+        OMWTable table = reader.load();
+        assertThat(table.getIndexes().size(), equalTo(4));
     }
-
-
 }

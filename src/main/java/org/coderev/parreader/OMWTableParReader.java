@@ -33,7 +33,6 @@ public class OMWTableParReader{
 	
     public OMWTableParReader(String parFileDirectory) {
         super();
-        //FileManager.unZip(parFileDirectory, "TBLE_");
         this.parFileDirectory = parFileDirectory;
 
     }
