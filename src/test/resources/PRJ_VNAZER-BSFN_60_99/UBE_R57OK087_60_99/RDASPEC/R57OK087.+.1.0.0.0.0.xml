@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDASPEC Report="R57OK087" Version="+" xmlns:et="http://peoplesoft.com/e1/metadata/v1.0/erptypes" xmlns="http://peoplesoft.com/e1/metadata/v1.0"><RDARecord><RDAReport PropertyFlags="36" ReportFlags="0" POTemplate="T57OK087" SourceStyleFlags="0" LimitRowsValue="0" ScaleFactor="0" NextTextID="107" SubSysWaitTime="0" PaperType="*JDE*CUSTOM"><RDAPrintInfo PageSize="256" PageWidth="16833" PageHeight="11908" PageOrientation="1" RDAServerString1="*NONE"/><et:JdeLogFont height="-9" orientation="0" charSet="1"/></RDAReport></RDARecord></RDASPEC>

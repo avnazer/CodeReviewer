@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GBRSPEC szEventSpecKey="5aa8db24-2d4e-4e25-b468-f3d69a6b323f" xmlns:et="http://peoplesoft.com/e1/metadata/v1.0/erptypes" xmlns="http://peoplesoft.com/e1/metadata/v1.0"><GBRVAR szVariableName="sec_cModuleCounted_EV01"><DSOBJVariable idVariable="25" szDict="EV01" wStyle="8" dataType="Char" size="1"/></GBRVAR></GBRSPEC>

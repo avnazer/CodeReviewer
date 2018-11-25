@@ -1,6 +1,8 @@
 package org.coderev.model.objects.tables;
 
-public class OMWTableColumn {
+import java.util.Comparator;
+
+public class OMWTableColumn implements Comparator<OMWTableColumn>{
     private String alias;
     private int sequence;
 
@@ -27,5 +29,17 @@ public class OMWTableColumn {
     @Override
     public String toString() {
         return this.sequence + " - " + this.alias;
+    }
+    
+    @Override
+    public boolean equals(Object object) {
+    	return object instanceof OMWTableColumn? 
+    			this.alias.equalsIgnoreCase(((OMWTableColumn)object).getAlias()):
+    			false;
+    }
+
+	@Override
+    public int compare(OMWTableColumn col1, OMWTableColumn col2) {
+        return Integer.compare(col1.getSequence(), col2.getSequence());
     }
 }

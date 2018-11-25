@@ -1,8 +1,10 @@
 package org.coderev.model.objects.tables;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class OMWTableIndex {
+public class OMWTableIndex implements Comparator<OMWTableIndex> {
     private int sequence;
     private boolean isPrimary;
     private boolean isUnique;
@@ -58,4 +60,16 @@ public class OMWTableIndex {
     public String toString() {
         return this.sequence + " - " + this.description;
     }
+
+	@Override
+	public int compare(OMWTableIndex o1, OMWTableIndex o2) {
+		return Integer.compare(o1.getSequence(), o2.getSequence());
+	}
+	
+	public void addIndexItem(OMWTableIndexItem indexItem) {
+		if(!this.indexItems.contains(indexItem)) {
+			this.indexItems.add(indexItem);
+		}
+		Collections.sort(this.indexItems, Comparator.comparingInt(OMWTableIndexItem::getSequence));
+	}
 }
