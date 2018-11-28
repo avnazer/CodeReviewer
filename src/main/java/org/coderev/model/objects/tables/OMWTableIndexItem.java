@@ -44,4 +44,10 @@ public class OMWTableIndexItem implements Comparator<OMWTableIndexItem>{
 	public int compare(OMWTableIndexItem o1, OMWTableIndexItem o2) {
 		return Integer.compare(o1.getSequence(), o2.getSequence());
 	}
+	
+	@Override
+	public boolean equals(Object indexItem) {
+		return indexItem instanceof OMWTableIndexItem ? 
+				((OMWTableIndexItem)indexItem).getAlias().equalsIgnoreCase(this.alias) : false;
+	}
 }

@@ -30,16 +30,15 @@ public class OMWTableColumn implements Comparator<OMWTableColumn>{
     public String toString() {
         return this.sequence + " - " + this.alias;
     }
-    
-    @Override
-    public boolean equals(Object object) {
-    	return object instanceof OMWTableColumn? 
-    			this.alias.equalsIgnoreCase(((OMWTableColumn)object).getAlias()):
-    			false;
-    }
 
 	@Override
     public int compare(OMWTableColumn col1, OMWTableColumn col2) {
         return Integer.compare(col1.getSequence(), col2.getSequence());
     }
+	
+	@Override
+	public boolean equals(Object column) {
+		return column instanceof OMWTableColumn ? 
+				((OMWTableColumn)column).getAlias().equalsIgnoreCase(this.alias) : false;
+	}
 }

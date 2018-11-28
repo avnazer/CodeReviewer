@@ -20,7 +20,7 @@ public class OMWTableMapper implements Mapper<OMWTable> {
 
 	@Override
 	public void addRule(String tag, String value) {
-		rules.put(tag, value);		
+		rules.put(tag, value.trim());		
 	}
 
 }

@@ -11,16 +11,16 @@ public class OMWTableIndexMapper implements Mapper<OMWTableIndex> {
 	@Override
 	public OMWTableIndex map() {
 		OMWTableIndex index = new OMWTableIndex();
-		index.setDescription(rules.get("TPDESC"));
-		index.setSequence(Integer.parseInt(rules.get("TPINID")));
-		index.setIsPrimary(rules.get("TPPRMF") == "1");
-		index.setIsUnique(rules.get("TPUNIQ") == "1");
+		index.setDescription(rules.get("TPDESC").trim());
+		index.setSequence(Integer.parseInt(rules.get("TPINID").trim()));
+		index.isPrimary(rules.get("TPPRMF").equals("1"));
+		index.isUnique(rules.get("TPUNIQ").equals("1"));
 		return index;
 	}
 
 	@Override
 	public void addRule(String tag, String value) {
-		rules.put(tag, value);
+		rules.put(tag, value.trim());
 		
 	}
 

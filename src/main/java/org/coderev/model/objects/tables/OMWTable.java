@@ -29,15 +29,12 @@ public class OMWTable extends OMWBaseObject {
     }
 
     public List<OMWTableIndex> getIndexes() {
-        return indexes;
+    	return new ArrayList<>(indexes);
     }
 
-    public void setIndexes(List<OMWTableIndex> indexes) {
-        this.indexes = indexes;
-    }
 
     public List<OMWTableColumn> getColumns() {
-        return columns;
+        return new ArrayList<>(columns);
     }
 
     @Override
@@ -59,5 +56,10 @@ public class OMWTable extends OMWBaseObject {
 			this.indexes.add(index);
 		}
 		Collections.sort(this.indexes, Comparator.comparingInt(OMWTableIndex::getSequence));
+	}
+	
+	@Override
+	public boolean equals(Object table) {
+		return table instanceof OMWTable ? ((OMWTable)table).getId().equalsIgnoreCase(this.id) : false;
 	}
 }

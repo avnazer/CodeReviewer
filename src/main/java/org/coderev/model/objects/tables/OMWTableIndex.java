@@ -1,5 +1,6 @@
 package org.coderev.model.objects.tables;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -10,7 +11,7 @@ public class OMWTableIndex implements Comparator<OMWTableIndex> {
     private boolean isUnique;
     private String description;
 
-    private List<OMWTableIndexItem> indexItems;
+    private List<OMWTableIndexItem> indexItems = new ArrayList<OMWTableIndexItem>();
 
     public OMWTableIndex() {
         super();
@@ -24,19 +25,19 @@ public class OMWTableIndex implements Comparator<OMWTableIndex> {
         this.sequence = sequence;
     }
 
-    public boolean isIsPrimary() {
+    public boolean isPrimary() {
         return isPrimary;
     }
 
-    public void setIsPrimary(boolean isPrimary) {
+    public void isPrimary(boolean isPrimary) {
         this.isPrimary = isPrimary;
     }
 
-    public boolean isIsUnique() {
+    public boolean isUnique() {
         return isUnique;
     }
 
-    public void setIsUnique(boolean isUnique) {
+    public void isUnique(boolean isUnique) {
         this.isUnique = isUnique;
     }
 
@@ -49,11 +50,7 @@ public class OMWTableIndex implements Comparator<OMWTableIndex> {
     }
 
     public List<OMWTableIndexItem> getIndexItems() {
-        return indexItems;
-    }
-
-    public void setIndexItems(List<OMWTableIndexItem> indexItems) {
-        this.indexItems = indexItems;
+        return new ArrayList<>(indexItems);
     }
 
     @Override
@@ -71,5 +68,10 @@ public class OMWTableIndex implements Comparator<OMWTableIndex> {
 			this.indexItems.add(indexItem);
 		}
 		Collections.sort(this.indexItems, Comparator.comparingInt(OMWTableIndexItem::getSequence));
+	}
+	
+	@Override
+	public boolean equals(Object index) {
+		return index instanceof OMWTableIndex ? ((OMWTableIndex)index).getSequence() == this.sequence : false;
 	}
 }

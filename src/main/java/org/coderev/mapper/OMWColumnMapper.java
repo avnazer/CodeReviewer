@@ -11,14 +11,14 @@ public class OMWColumnMapper implements Mapper<OMWTableColumn> {
 	@Override
 	public OMWTableColumn map() {
 		OMWTableColumn column = new OMWTableColumn();
-		column.setAlias(rules.get("TDOBND"));
+		column.setAlias(rules.get("TDOBND").trim());
 		column.setSequence(Integer.parseInt(rules.get("TDPSEQ")));
 		return column;
 	}
 
 	@Override
 	public void addRule(String tag, String value) {
-		rules.put(tag, value);
+		rules.put(tag, value.trim());
 	
 	}
 
