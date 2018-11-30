@@ -13,7 +13,7 @@ import org.coderev.model.objects.tables.OMWTable;
 import org.coderev.model.objects.tables.OMWTableColumn;
 import org.coderev.model.objects.tables.OMWTableIndex;
 import org.coderev.model.objects.tables.OMWTableIndexItem;
-import org.coderev.parreader.ParReader;
+import org.coderev.parreader.Reader;
 import org.coderev.parreader.filemanagers.FileManager;
 import org.coderev.parreader.filemanagers.XMLDomReader;
 import org.slf4j.LoggerFactory;
@@ -23,18 +23,18 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class OMWTableParReader implements ParReader{
+public class OMWTableParReader implements Reader{
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWTableParReader.class);
-    private String parFileDirectory;
+    private String parFile;
     private OMWTable table;
 	private OMWColumnMapper columnMapper = new OMWColumnMapper();
 	private OMWTableMapper tableMapper = new OMWTableMapper();
 	private OMWTableIndexMapper indexMapper = new OMWTableIndexMapper();
 	private OMWTableIndexItemMapper indexItemMapper = new OMWTableIndexItemMapper();
 	
-    public OMWTableParReader(String parFileDirectory) {
+    public OMWTableParReader(String parFile) {
         super();
-        this.parFileDirectory = parFileDirectory;
+        this.parFile = parFile;
 
     }
 
@@ -49,7 +49,7 @@ public class OMWTableParReader implements ParReader{
     }
     
     private void loadTable()  {
-    	String fileName = parFileDirectory + "/F9860.xml";
+    	String fileName = parFile + "/F9860.xml";
     	File file = new File(fileName);
     	Document doc = null;
     	
@@ -80,7 +80,7 @@ public class OMWTableParReader implements ParReader{
     }
 
     private void loadindexes() {
-    	String indexDirectory = parFileDirectory + "/DDKEYH/";
+    	String indexDirectory = parFile + "/DDKEYH/";
     	String[] indexFiles = FileManager.getFilesFromDirectory(indexDirectory, ".xml");
        
         for (String fileDir : indexFiles) {
@@ -118,7 +118,7 @@ public class OMWTableParReader implements ParReader{
     }   
     
     private void loadIndexItems(String IndexFileName, OMWTableIndex index)  {
-    	String idexItemsDirectory = parFileDirectory + "/DDKEYD/";
+    	String idexItemsDirectory = parFile + "/DDKEYD/";
     	String[] indexFiles = FileManager.getFilesFromDirectory(idexItemsDirectory, IndexFileName);
        
         for (String fileDir : indexFiles) {
@@ -155,7 +155,7 @@ public class OMWTableParReader implements ParReader{
     }
     
     private void loadColumns() {
-    	String columnsDirectory = parFileDirectory + "/DDCLMN/";
+    	String columnsDirectory = parFile + "/DDCLMN/";
         String[] columnFiles = FileManager.getFilesFromDirectory(columnsDirectory, ".xml");
         
 

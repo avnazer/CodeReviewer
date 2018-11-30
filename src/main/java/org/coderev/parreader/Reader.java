@@ -2,6 +2,6 @@ package org.coderev.parreader;
 
 import org.coderev.model.objects.OMWObject;
 
-public interface ParReader {
+public interface Reader {
 	public OMWObject load();
 }
