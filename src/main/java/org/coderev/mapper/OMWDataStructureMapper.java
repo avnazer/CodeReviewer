@@ -12,7 +12,7 @@ public class OMWDataStructureMapper implements Mapper<OMWDataStructure> {
 	public OMWDataStructure map() {
 		OMWDataStructure ds = new OMWDataStructure();
 		ds.setId(rules.get("SIOBNM"));
-		ds.setDescription("SIMD");
+		ds.setDescription(rules.get("SIMD"));
 		return ds;
 	}
 

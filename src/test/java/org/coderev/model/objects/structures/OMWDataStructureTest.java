@@ -29,4 +29,10 @@ public class OMWDataStructureTest {
 		assertThat(ds.getId(), equalTo("D57OK088A"));
 		assertThat(ds.getDescription(), equalTo("Retrieve comma separated string of items GTIN values DS"));
 	}
+	
+	@Test
+	public void testNumberOfParameters() {
+		OMWDataStructure ds = reader.load();
+		assertThat(ds.getParameters().size(), equalTo(5));
+	}
 }
