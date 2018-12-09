@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.coderev.mapper.OMWColumnMapper;
-import org.coderev.mapper.OMWTableIndexItemMapper;
-import org.coderev.mapper.OMWTableIndexMapper;
-import org.coderev.mapper.OMWTableMapper;
+import org.coderev.mapper.tables.OMWColumnMapper;
+import org.coderev.mapper.tables.OMWTableIndexItemMapper;
+import org.coderev.mapper.tables.OMWTableIndexMapper;
+import org.coderev.mapper.tables.OMWTableMapper;
 import org.coderev.model.objects.tables.OMWTable;
 import org.coderev.model.objects.tables.OMWTableColumn;
 import org.coderev.model.objects.tables.OMWTableIndex;
@@ -25,17 +25,17 @@ import org.xml.sax.SAXException;
 
 public class OMWTableParReader implements Reader{
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWTableParReader.class);
-    private String parFile;
+    private String parPath;
     private OMWTable table;
 	private OMWColumnMapper columnMapper = new OMWColumnMapper();
 	private OMWTableMapper tableMapper = new OMWTableMapper();
 	private OMWTableIndexMapper indexMapper = new OMWTableIndexMapper();
 	private OMWTableIndexItemMapper indexItemMapper = new OMWTableIndexItemMapper();
 	
-    public OMWTableParReader(String parFile) {
+    public OMWTableParReader(String parPath) {
         super();
-        this.parFile = parFile;
-
+        FileManager.unzip(parPath);
+        this.parPath = parPath.substring(0, parPath.indexOf(".par"));
     }
 
     public OMWTable load(){
@@ -49,16 +49,9 @@ public class OMWTableParReader implements Reader{
     }
     
     private void loadTable()  {
-    	String fileName = parFile + "/F9860.xml";
+    	String fileName = parPath + "/F9860.xml";
     	File file = new File(fileName);
-    	Document doc = null;
-    	
-		try {
-			doc = XMLDomReader.createDOMXML(file);
-		} catch (ParserConfigurationException | SAXException | IOException e) {
-			LOGGER.error(e.getMessage());
-			throw new RuntimeException();
-		}
+    	Document doc = XMLDomReader.createDOMXML(file);
 		
 		if(doc != null) {
 			NodeList nodes = doc.getElementsByTagName("row");	
@@ -80,19 +73,12 @@ public class OMWTableParReader implements Reader{
     }
 
     private void loadindexes() {
-    	String indexDirectory = parFile + "/DDKEYH/";
+    	String indexDirectory = parPath + "/specs/DDKEYH/";
     	String[] indexFiles = FileManager.getFilesFromDirectory(indexDirectory, ".xml");
        
         for (String fileDir : indexFiles) {
             File file = new File(indexDirectory + fileDir);
-            Document doc;
-            
-            try {
-                doc = XMLDomReader.createDOMXML(file);
-            } catch (ParserConfigurationException | IOException | SAXException e) {
-                LOGGER.error(e.getMessage());
-                throw new RuntimeException();
-            }
+            Document doc = XMLDomReader.createDOMXML(file);
             
             if(doc != null) {
 	            NodeList nodes = doc.getElementsByTagName("row");
@@ -118,19 +104,12 @@ public class OMWTableParReader implements Reader{
     }   
     
     private void loadIndexItems(String IndexFileName, OMWTableIndex index)  {
-    	String idexItemsDirectory = parFile + "/DDKEYD/";
+    	String idexItemsDirectory = parPath + "/specs/DDKEYD/";
     	String[] indexFiles = FileManager.getFilesFromDirectory(idexItemsDirectory, IndexFileName);
        
         for (String fileDir : indexFiles) {
             File file = new File(idexItemsDirectory + fileDir);
-            Document doc;
-            
-            try {
-                 doc = XMLDomReader.createDOMXML(file);
-            } catch (ParserConfigurationException | IOException | SAXException e) {
-                LOGGER.error(e.getMessage());
-                throw new RuntimeException();
-            }
+            Document doc = XMLDomReader.createDOMXML(file);
             
             if(doc != null) {
                 NodeList nodes = doc.getElementsByTagName("row");
@@ -155,19 +134,14 @@ public class OMWTableParReader implements Reader{
     }
     
     private void loadColumns() {
-    	String columnsDirectory = parFile + "/DDCLMN/";
+    	String columnsDirectory = parPath + "/specs/DDCLMN/";
         String[] columnFiles = FileManager.getFilesFromDirectory(columnsDirectory, ".xml");
         
 
         for (String fileDir : columnFiles) {
             File file = new File(columnsDirectory  + fileDir);
-            Document doc;
-            try {
-            	doc = XMLDomReader.createDOMXML(file);
-            } catch (ParserConfigurationException | IOException | SAXException e) {
-                LOGGER.error(e.getMessage());
-                throw new RuntimeException();
-            }
+            Document doc = XMLDomReader.createDOMXML(file);
+            	
             if(doc != null) {
                 NodeList nodes = doc.getElementsByTagName("row");
                 Node node = nodes.item(0);

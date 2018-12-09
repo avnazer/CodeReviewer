@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<RDASPEC Report="R57OK087" Version="+" xmlns:et="http://peoplesoft.com/e1/metadata/v1.0/erptypes" xmlns="http://peoplesoft.com/e1/metadata/v1.0"><RDARecord><RDAObject SectionID="3" SequenceID="16" PropertyFlags="4115" ObjectType="CONSTANT" LeftCoordinate="180" TopCoordinate="2220" Width="2175" Height="300" DataType="String" DispLength="22" TextID="80" ObjectID="27" PointSize="100" Justify="CENTER" TotalType="SUM"><et:JdeLogFont height="-13" orientation="0" weight="700" charSet="1"/></RDAObject></RDARecord></RDASPEC>

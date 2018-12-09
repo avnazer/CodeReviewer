@@ -18,8 +18,14 @@ public class FileManager {
         return f.list(filter);
     }
 
-    public void unzip(String zipFile) throws IOException {
-        ZipFile zip = new ZipFile(new File(zipFile));
+    public static void unzip(String zipFile)  {
+    	ZipFile zip = null;
+    	try {
+         zip = new ZipFile(new File(zipFile));
+    	}catch(IOException e) { 
+    		LOGGER.error(e.getMessage());
+			throw new RuntimeException();
+		}
         Enumeration<? extends ZipEntry> entries = zip.entries();
         String rootPath = getRootPath(zip);
 
@@ -34,7 +40,13 @@ public class FileManager {
             // create the parent directory structure if needed
             destinationParent.mkdirs();
             if (!entry.isDirectory()) {
-                BufferedInputStream is = new BufferedInputStream(zip.getInputStream(entry));
+                BufferedInputStream is;
+				try {
+					is = new BufferedInputStream(zip.getInputStream(entry));
+				} catch (IOException e) {
+					LOGGER.error(e.getMessage());
+					throw new RuntimeException();
+				}
                 extractEntry(destFile, is);
             }
             if (currentEntry.endsWith(".zip")) {
@@ -43,23 +55,23 @@ public class FileManager {
         }
     }
 
-    private void makeRootDir(String rootPath) {
+    private static void makeRootDir(String rootPath) {
         new File(rootPath).mkdir();
     }
 
-    private String getRootPath(ZipFile zip) {
+    private static String getRootPath(ZipFile zip) {
         String zipFile = zip.getName();
         zipFile = zipFile.substring(0, zipFile.length() - 4);
         makeRootDir(zipFile);
         return zipFile;
     }
 
-    private String getCurrentEntryName(ZipEntry entry) {
+    private static String getCurrentEntryName(ZipEntry entry) {
         String currentEntry = entry.getName();
         return currentEntry.replace("\\", "/");
     }
 
-    private void extractEntry(File destFile, BufferedInputStream is) {
+    private static void extractEntry(File destFile, BufferedInputStream is) {
         try (
                 FileOutputStream fos = new FileOutputStream(destFile);
                 BufferedOutputStream dest = new BufferedOutputStream(fos, BUFFER)) {

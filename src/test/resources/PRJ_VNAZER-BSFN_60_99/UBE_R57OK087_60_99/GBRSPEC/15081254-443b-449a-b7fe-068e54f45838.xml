@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<GBRSPEC szEventSpecKey="15081254-443b-449a-b7fe-068e54f45838" xmlns:et="http://peoplesoft.com/e1/metadata/v1.0/erptypes" xmlns="http://peoplesoft.com/e1/metadata/v1.0"><GBRVAR szVariableName="rpt_szBatchNumber_EDBT"><DSOBJVariable idVariable="5" szDict="EDBT" wStyle="4" dataType="String" size="15"/></GBRVAR></GBRSPEC>

@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<GBRSPEC szEventSpecKey="b7e30986-13b5-49b0-9e98-5b6f019423f3" xmlns:et="http://peoplesoft.com/e1/metadata/v1.0/erptypes" xmlns="http://peoplesoft.com/e1/metadata/v1.0"><GBRVAR szVariableName="sec_cErrorCode_ERRC"><DSOBJVariable idVariable="21" szDict="ERRC" wStyle="8" dataType="Char" size="1"/></GBRVAR><GBRVAR szVariableName="sec_szErrorMessage_DTAI"><DSOBJVariable idVariable="22" szDict="DTAI" wStyle="8" dataType="String" size="10"/></GBRVAR></GBRSPEC>

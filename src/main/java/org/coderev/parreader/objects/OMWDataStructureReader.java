@@ -5,10 +5,10 @@ import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.coderev.mapper.OMWDSParameterMapper;
-import org.coderev.mapper.OMWDataStructureMapper;
-import org.coderev.model.objects.structures.OMWDSParameter;
-import org.coderev.model.objects.structures.OMWDataStructure;
+import org.coderev.mapper.structures.datastructures.OMWDSParameterMapper;
+import org.coderev.mapper.structures.datastructures.OMWDataStructureMapper;
+import org.coderev.model.objects.structures.datastructures.OMWDSParameter;
+import org.coderev.model.objects.structures.datastructures.OMWDataStructure;
 import org.coderev.parreader.Reader;
 import org.coderev.parreader.filemanagers.FileManager;
 import org.coderev.parreader.filemanagers.XMLDomReader;
@@ -22,14 +22,15 @@ import org.xml.sax.SAXException;
 
 public class OMWDataStructureReader implements Reader {
 	private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWDataStructureReader.class);
-	private String parFile;
+	private String parPath;
 	private OMWDataStructure ds;
 	private OMWDSParameterMapper dsParmMapper = new OMWDSParameterMapper();
-	
 	private OMWDataStructureMapper dsMapper = new OMWDataStructureMapper();
 	
-	public OMWDataStructureReader(String path) {
-		this.parFile = path;
+	public OMWDataStructureReader(String parPath) {
+        FileManager.unzip(parPath);
+        this.parPath = parPath.substring(0, parPath.indexOf(".par"));
+        
 	}
 
 	@Override
@@ -43,16 +44,9 @@ public class OMWDataStructureReader implements Reader {
 	}
 	
 	private void loadDS (){
-		String fileName =  this.parFile + "/F9860.xml";
+		String fileName =  this.parPath + "/F9860.xml";
 		File file = new File(fileName);
-		Document doc = null;
-		
-		try {
-			doc = XMLDomReader.createDOMXML(file);
-		} catch (ParserConfigurationException | SAXException | IOException e) {
-			LOGGER.error(e.getMessage());
-			throw new RuntimeException();
-		}
+		Document doc = XMLDomReader.createDOMXML(file);
 		
 		if(doc != null){
 			NodeList nodes = doc.getElementsByTagName("row");
@@ -72,18 +66,11 @@ public class OMWDataStructureReader implements Reader {
 	}
 	
 	private void loadParameters(){
-		String directory = this.parFile+"/DSTMPL/";
+		String directory = this.parPath+"/specs/DSTMPL/";
 		String[] files = FileManager.getFilesFromDirectory(directory, ".xml");
 		for(String fileName :files) {
 			File file = new File(directory + fileName);
-			Document doc;
-			
-			try {
-				doc = XMLDomReader.createDOMXML(file);
-			} catch (ParserConfigurationException | SAXException | IOException e) {
-				LOGGER.error(e.getMessage());
-				throw new RuntimeException();
-			}
+			Document doc = XMLDomReader.createDOMXML(file);
 			
 			if(doc != null) {
 			

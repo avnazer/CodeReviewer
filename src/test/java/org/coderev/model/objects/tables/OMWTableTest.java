@@ -20,7 +20,7 @@ public class OMWTableTest {
 
     @Before
     public void setUp() throws UnsupportedEncodingException {
-        URL url = OMWTableTest.class.getResource("/PRJ_VNAZER-BSFN_60_99/TBLE_F57OK087_60_99");
+        URL url = OMWTableTest.class.getResource("/PRJ_VNAZER-BSFN_60_99/TBLE_F57OK087_60_99.par");
         String path = URLDecoder.decode(url.getPath(), "UTF-8");
         reader = new OMWTableParReader(path);
     }
