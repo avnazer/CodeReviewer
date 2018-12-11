@@ -20,14 +20,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class OMWDataStructureReader implements Reader {
-	private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWDataStructureReader.class);
+public class OMWDataStructureParReader implements Reader {
+	private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWDataStructureParReader.class);
 	private String parPath;
 	private OMWDataStructure ds;
 	private OMWDSParameterMapper dsParmMapper = new OMWDSParameterMapper();
 	private OMWDataStructureMapper dsMapper = new OMWDataStructureMapper();
 	
-	public OMWDataStructureReader(String parPath) {
+	public OMWDataStructureParReader(String parPath) {
         FileManager.unzip(parPath);
         this.parPath = parPath.substring(0, parPath.indexOf(".par"));
         

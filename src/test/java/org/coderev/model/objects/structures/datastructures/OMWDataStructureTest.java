@@ -7,21 +7,19 @@ import static org.junit.Assert.assertThat;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.coderev.parreader.objects.OMWDataStructureReader;
+import org.coderev.parreader.objects.OMWDataStructureParReader;
 import org.junit.Before;
 import org.junit.Test;
 
 public class OMWDataStructureTest {
-	private OMWDataStructureReader reader;
+	private OMWDataStructureParReader reader;
 	
     @Before
     public void setUp() throws UnsupportedEncodingException {
         URL url = OMWDataStructureTest.class.getResource("/PRJ_VNAZER-BSFN_60_99/DSTR_D57OK088A_60_99.par");
         String path = URLDecoder.decode(url.getPath(), "UTF-8");
-        reader = new OMWDataStructureReader(path);
+        reader = new OMWDataStructureParReader(path);
     }
     
 	@Test

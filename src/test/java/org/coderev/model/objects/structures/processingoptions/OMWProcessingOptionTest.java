@@ -7,18 +7,18 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
 
-import org.coderev.parreader.objects.OMWProcessingOptionReader;
+import org.coderev.parreader.objects.OMWProcessingOptionParReader;
 import org.junit.Before;
 import org.junit.Test;
 
 public class OMWProcessingOptionTest {
-	private OMWProcessingOptionReader reader;
+	private OMWProcessingOptionParReader reader;
 	
     @Before
     public void setUp() throws UnsupportedEncodingException {
         URL url = OMWProcessingOptionTest.class.getResource("/PRJ_VNAZER-BSFN_60_99/DSTR_T57OK087_60_99.par");
         String path = URLDecoder.decode(url.getPath(), "UTF-8");
-        reader = new OMWProcessingOptionReader(path);
+        reader = new OMWProcessingOptionParReader(path);
     }
     
 	@Test

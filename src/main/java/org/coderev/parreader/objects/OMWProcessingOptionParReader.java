@@ -17,14 +17,14 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class OMWProcessingOptionReader implements Reader {
-	private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWProcessingOptionReader.class);
+public class OMWProcessingOptionParReader implements Reader {
+	private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWProcessingOptionParReader.class);
 	private String parPath;
 	private OMWProcessingOption po;
 	private OMWProcessingOptionMapper poMapper = new OMWProcessingOptionMapper();
 	private Document mainPODoc;
 	
-	public OMWProcessingOptionReader(String parPath) {
+	public OMWProcessingOptionParReader(String parPath) {
 		FileManager.unzip(parPath);
 		this.parPath = parPath.substring(0, parPath.indexOf(".par"));
 	}
