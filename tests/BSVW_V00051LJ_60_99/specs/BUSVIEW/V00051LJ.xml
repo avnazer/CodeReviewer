@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BSVW szView="V00051LJ" szTable="F00051" xmlns:et="http://peoplesoft.com/e1/metadata/v1.0/erptypes" xmlns="http://peoplesoft.com/e1/metadata/v1.0">
+	<Bob_TableCollection>
+		<Bob_Table idPrimaryIndex="1" szTable="F00051"/>
+		<Bob_Table szTable="F0005"/>
+	</Bob_TableCollection>
+	<DbrefCollection>
+		<et:Dbref szTable="F00051" szDict="SY"/>
+		<et:Dbref szTable="F00051" szDict="RT"/>
+		<et:Dbref szTable="F00051" szDict="KY"/>
+		<et:Dbref szTable="F00051" szDict="LNGP"/>
+	</DbrefCollection>
+	<Bob_ColumnCollection>
+		<Bob_Column bRequired="1" nSeq="0" szTable="F00051" szDict="SY"/>
+		<Bob_Column bRequired="1" nSeq="1" szTable="F00051" szDict="RT"/>
+		<Bob_Column bRequired="1" nSeq="2" szTable="F00051" szDict="KY"/>
+		<Bob_Column bRequired="1" nSeq="3" szTable="F00051" szDict="LNGP"/>
+		<Bob_Column bRequired="1" nSeq="4" szTable="F0005" szDict="SY"/>
+		<Bob_Column bRequired="1" nSeq="5" szTable="F0005" szDict="RT"/>
+		<Bob_Column bRequired="1" nSeq="6" szTable="F0005" szDict="KY"/>
+		<Bob_Column nSeq="7" szTable="F00051" szDict="TIMESDELTA"/>
+		<Bob_Column nSeq="8" szTable="F00051" szDict="FIRSTDELTA"/>
+		<Bob_Column nSeq="9" szTable="F00051" szDict="REQFLAG"/>
+		<Bob_Column nSeq="10" szTable="F00051" szDict="TRANSSTAT"/>
+		<Bob_Column nSeq="11" szTable="F00051" szDict="TRANSSTAT2"/>
+		<Bob_Column nSeq="12" szTable="F00051" szDict="TRANSSTAT3"/>
+		<Bob_Column nSeq="13" szTable="F00051" szDict="TRANSFLAG"/>
+		<Bob_Column nSeq="14" szTable="F00051" szDict="LASTTRANS"/>
+		<Bob_Column nSeq="15" szTable="F00051" szDict="DATETRANS"/>
+		<Bob_Column nSeq="16" szTable="F00051" szDict="FIRSTVERS"/>
+		<Bob_Column nSeq="17" szTable="F00051" szDict="FUTTRANS1"/>
+		<Bob_Column nSeq="18" szTable="F00051" szDict="FUTTRANS2"/>
+		<Bob_Column nSeq="19" szTable="F00051" szDict="FUTTRANS3"/>
+		<Bob_Column nSeq="20" szTable="F00051" szDict="FUTDATE1"/>
+		<Bob_Column nSeq="21" szTable="F00051" szDict="FUTDATE2"/>
+		<Bob_Column nSeq="22" szTable="F00051" szDict="FUTDATE3"/>
+		<Bob_Column nSeq="23" szTable="F00051" szDict="USER"/>
+		<Bob_Column nSeq="24" szTable="F00051" szDict="PID"/>
+		<Bob_Column nSeq="25" szTable="F00051" szDict="UPMJ"/>
+		<Bob_Column nSeq="26" szTable="F00051" szDict="JOBN"/>
+		<Bob_Column nSeq="27" szTable="F00051" szDict="UPMT"/>
+		<Bob_Column nSeq="28" szTable="F0005" szDict="DL01"/>
+		<Bob_Column nSeq="29" szTable="F0005" szDict="DL02"/>
+		<Bob_Column nSeq="30" szTable="F0005" szDict="SPHD"/>
+		<Bob_Column nSeq="31" szTable="F0005" szDict="UDCO"/>
+		<Bob_Column nSeq="32" szTable="F0005" szDict="HRDC"/>
+		<Bob_Column nSeq="33" szTable="F0005" szDict="USER"/>
+		<Bob_Column nSeq="34" szTable="F0005" szDict="PID"/>
+		<Bob_Column nSeq="35" szTable="F0005" szDict="UPMJ"/>
+		<Bob_Column nSeq="36" szTable="F0005" szDict="JOBN"/>
+		<Bob_Column nSeq="37" szTable="F0005" szDict="UPMT"/>
+	</Bob_ColumnCollection>
+	<Bob_JoinCollection>
+		<Bob_Join chType="1" szFTable="F00051" szFDict="SY" szPTable="F0005" szPDict="SY"/>
+		<Bob_Join chType="1" szFTable="F00051" szFDict="RT" szPTable="F0005" szPDict="RT"/>
+		<Bob_Join chType="1" szFTable="F00051" szFDict="KY" szPTable="F0005" szPDict="KY"/>
+	</Bob_JoinCollection>
+</BSVW>

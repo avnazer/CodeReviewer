@@ -1,11 +1,8 @@
 package org.coderev.parreader.objects;
 
 import java.io.File;
-import java.io.IOException;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.coderev.mapper.tables.OMWColumnMapper;
+import org.coderev.mapper.tables.OMWTableColumnMapper;
 import org.coderev.mapper.tables.OMWTableIndexItemMapper;
 import org.coderev.mapper.tables.OMWTableIndexMapper;
 import org.coderev.mapper.tables.OMWTableMapper;
@@ -21,13 +18,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 public class OMWTableParReader implements Reader{
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(OMWTableParReader.class);
     private String parPath;
     private OMWTable table;
-	private OMWColumnMapper columnMapper = new OMWColumnMapper();
+	private OMWTableColumnMapper columnMapper = new OMWTableColumnMapper();
 	private OMWTableMapper tableMapper = new OMWTableMapper();
 	private OMWTableIndexMapper indexMapper = new OMWTableIndexMapper();
 	private OMWTableIndexItemMapper indexItemMapper = new OMWTableIndexItemMapper();

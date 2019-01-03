@@ -20,4 +20,21 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/test/resources/BSVW_V00051LJ_60_99.par</name>
+			<type>1</type>
+			<location>C:/Users/Verónica/Desktop/WorkSpace/CodeReviewer/tests/BSVW_V00051LJ_60_99.par</location>
+		</link>
+		<link>
+			<name>src/test/resources/BSVW_V060116TAG_60_99.par</name>
+			<type>1</type>
+			<location>C:/Users/Verónica/Desktop/WorkSpace/CodeReviewer/tests/BSVW_V060116TAG_60_99.par</location>
+		</link>
+		<link>
+			<name>src/test/resources/BSVW_V57OK088_60_99.par</name>
+			<type>1</type>
+			<location>C:/Users/Verónica/Desktop/WorkSpace/CodeReviewer/tests/BSVW_V57OK088_60_99.par</location>
+		</link>
+	</linkedResources>
 </projectDescription>

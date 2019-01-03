@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BSVW szView="V57OK088" szTable="F4102" xmlns:et="http://peoplesoft.com/e1/metadata/v1.0/erptypes" xmlns="http://peoplesoft.com/e1/metadata/v1.0">
+	<Bob_TableCollection>
+		<Bob_Table idPrimaryIndex="1" szTable="F4102"/>
+		<Bob_Table szTable="F41021"/>
+		<Bob_Table szTable="F4101"/>
+	</Bob_TableCollection>
+	<DbrefCollection>
+		<et:Dbref szTable="F4102" szDict="MCU"/>
+		<et:Dbref szTable="F4102" szDict="ITM"/>
+	</DbrefCollection>
+	<Bob_ColumnCollection>
+		<Bob_Column bRequired="1" nSeq="0" szTable="F4102" szDict="ITM"/>
+		<Bob_Column bRequired="1" nSeq="1" szTable="F41021" szDict="ITM"/>
+		<Bob_Column bRequired="1" nSeq="2" szTable="F4102" szDict="MCU"/>
+		<Bob_Column bRequired="1" nSeq="3" szTable="F41021" szDict="MCU"/>
+		<Bob_Column bRequired="1" nSeq="4" szTable="F4101" szDict="ITM"/>
+		<Bob_Column bRequired="1" nSeq="5" szTable="F41021" szDict="LOCN"/>
+		<Bob_Column bRequired="1" nSeq="6" szTable="F41021" szDict="LOTN"/>
+		<Bob_Column nSeq="7" szTable="F41021" szDict="PBIN"/>
+		<Bob_Column nSeq="8" szTable="F41021" szDict="GLPT"/>
+		<Bob_Column nSeq="9" szTable="F41021" szDict="LOTS"/>
+		<Bob_Column nSeq="10" szTable="F41021" szDict="LRCJ"/>
+		<Bob_Column nSeq="11" szTable="F41021" szDict="PQOH"/>
+		<Bob_Column nSeq="12" szTable="F41021" szDict="PBCK"/>
+		<Bob_Column nSeq="13" szTable="F41021" szDict="PREQ"/>
+		<Bob_Column nSeq="14" szTable="F41021" szDict="QWBO"/>
+		<Bob_Column nSeq="15" szTable="F41021" szDict="OT1P"/>
+		<Bob_Column nSeq="16" szTable="F41021" szDict="OT2P"/>
+		<Bob_Column nSeq="17" szTable="F41021" szDict="OT1A"/>
+		<Bob_Column nSeq="18" szTable="F41021" szDict="HCOM"/>
+		<Bob_Column nSeq="19" szTable="F41021" szDict="PCOM"/>
+		<Bob_Column nSeq="20" szTable="F41021" szDict="FCOM"/>
+		<Bob_Column nSeq="21" szTable="F41021" szDict="FUN1"/>
+		<Bob_Column nSeq="22" szTable="F41021" szDict="QOWO"/>
+		<Bob_Column nSeq="23" szTable="F41021" szDict="QTTR"/>
+		<Bob_Column nSeq="24" szTable="F41021" szDict="QTIN"/>
+		<Bob_Column nSeq="25" szTable="F41021" szDict="QONL"/>
+		<Bob_Column nSeq="26" szTable="F41021" szDict="QTRI"/>
+		<Bob_Column nSeq="27" szTable="F41021" szDict="QTRO"/>
+		<Bob_Column nSeq="28" szTable="F41021" szDict="NCDJ"/>
+		<Bob_Column nSeq="29" szTable="F41021" szDict="QTY1"/>
+		<Bob_Column nSeq="30" szTable="F41021" szDict="QTY2"/>
+		<Bob_Column nSeq="31" szTable="F41021" szDict="URAB"/>
+		<Bob_Column nSeq="32" szTable="F41021" szDict="URRF"/>
+		<Bob_Column nSeq="33" szTable="F41021" szDict="URAT"/>
+		<Bob_Column nSeq="34" szTable="F41021" szDict="URCD"/>
+		<Bob_Column nSeq="35" szTable="F41021" szDict="JOBN"/>
+		<Bob_Column nSeq="36" szTable="F41021" szDict="PID"/>
+		<Bob_Column nSeq="37" szTable="F41021" szDict="UPMJ"/>
+		<Bob_Column nSeq="38" szTable="F41021" szDict="USER"/>
+		<Bob_Column nSeq="39" szTable="F41021" szDict="TDAY"/>
+		<Bob_Column nSeq="40" szTable="F41021" szDict="URDT"/>
+		<Bob_Column nSeq="41" szTable="F41021" szDict="QTO1"/>
+		<Bob_Column nSeq="42" szTable="F41021" szDict="QTO2"/>
+		<Bob_Column nSeq="43" szTable="F41021" szDict="HCMS"/>
+		<Bob_Column nSeq="44" szTable="F41021" szDict="PJCM"/>
+		<Bob_Column nSeq="45" szTable="F41021" szDict="PJDM"/>
+		<Bob_Column nSeq="46" szTable="F41021" szDict="SCMS"/>
+		<Bob_Column nSeq="47" szTable="F41021" szDict="SIBW"/>
+		<Bob_Column nSeq="48" szTable="F41021" szDict="SOBW"/>
+		<Bob_Column nSeq="49" szTable="F41021" szDict="SQOH"/>
+		<Bob_Column nSeq="50" szTable="F41021" szDict="SQWO"/>
+		<Bob_Column nSeq="51" szTable="F41021" szDict="SREQ"/>
+		<Bob_Column nSeq="52" szTable="F41021" szDict="SWHC"/>
+		<Bob_Column nSeq="53" szTable="F41021" szDict="SWSC"/>
+		<Bob_Column nSeq="54" szTable="F41021" szDict="CHDF"/>
+		<Bob_Column nSeq="55" szTable="F41021" szDict="WPDF"/>
+		<Bob_Column nSeq="56" szTable="F41021" szDict="CFGSID"/>
+		<Bob_Column nSeq="57" szTable="F4102" szDict="LITM"/>
+		<Bob_Column nSeq="58" szTable="F4102" szDict="AITM"/>
+		<Bob_Column nSeq="59" szTable="F4102" szDict="SRP1"/>
+		<Bob_Column nSeq="60" szTable="F4102" szDict="SRP2"/>
+		<Bob_Column nSeq="61" szTable="F4102" szDict="SRP3"/>
+		<Bob_Column nSeq="62" szTable="F4102" szDict="SRP4"/>
+		<Bob_Column nSeq="63" szTable="F4102" szDict="SRP5"/>
+		<Bob_Column nSeq="64" szTable="F4102" szDict="SRP6"/>
+		<Bob_Column nSeq="65" szTable="F4102" szDict="SRP7"/>
+		<Bob_Column nSeq="66" szTable="F4102" szDict="SRP8"/>
+		<Bob_Column nSeq="67" szTable="F4102" szDict="SRP9"/>
+		<Bob_Column nSeq="68" szTable="F4102" szDict="SRP0"/>
+		<Bob_Column nSeq="69" szTable="F4102" szDict="PRP1"/>
+		<Bob_Column nSeq="70" szTable="F4102" szDict="PRP2"/>
+		<Bob_Column nSeq="71" szTable="F4102" szDict="PRP3"/>
+		<Bob_Column nSeq="72" szTable="F4102" szDict="PRP4"/>
+		<Bob_Column nSeq="73" szTable="F4102" szDict="PRP5"/>
+		<Bob_Column nSeq="74" szTable="F4102" szDict="PRP6"/>
+		<Bob_Column nSeq="75" szTable="F4102" szDict="PRP7"/>
+		<Bob_Column nSeq="76" szTable="F4102" szDict="PRP8"/>
+		<Bob_Column nSeq="77" szTable="F4102" szDict="PRP9"/>
+		<Bob_Column nSeq="78" szTable="F4102" szDict="PRP0"/>
+		<Bob_Column nSeq="79" szTable="F4102" szDict="CDCD"/>
+		<Bob_Column nSeq="80" szTable="F4102" szDict="PDGR"/>
+		<Bob_Column nSeq="81" szTable="F4102" szDict="DSGP"/>
+		<Bob_Column nSeq="82" szTable="F4102" szDict="VEND"/>
+		<Bob_Column nSeq="83" szTable="F4102" szDict="ANPL"/>
+		<Bob_Column nSeq="84" szTable="F4102" szDict="BUYR"/>
+		<Bob_Column nSeq="85" szTable="F4102" szDict="GLPT"/>
+		<Bob_Column nSeq="86" szTable="F4102" szDict="ORIG"/>
+		<Bob_Column nSeq="87" szTable="F4102" szDict="ROPI"/>
+		<Bob_Column nSeq="88" szTable="F4102" szDict="ROQI"/>
+		<Bob_Column nSeq="89" szTable="F4102" szDict="RQMX"/>
+		<Bob_Column nSeq="90" szTable="F4102" szDict="RQMN"/>
+		<Bob_Column nSeq="91" szTable="F4102" szDict="WOMO"/>
+		<Bob_Column nSeq="92" szTable="F4102" szDict="SERV"/>
+		<Bob_Column nSeq="93" szTable="F4102" szDict="SAFE"/>
+		<Bob_Column nSeq="94" szTable="F4102" szDict="SLD"/>
+		<Bob_Column nSeq="95" szTable="F4102" szDict="CKAV"/>
+		<Bob_Column nSeq="96" szTable="F4102" szDict="SRCE"/>
+		<Bob_Column nSeq="97" szTable="F4102" szDict="LOTS"/>
+		<Bob_Column nSeq="98" szTable="F4102" szDict="OT1Y"/>
+		<Bob_Column nSeq="99" szTable="F4102" szDict="OT2Y"/>
+		<Bob_Column nSeq="100" szTable="F4102" szDict="STDP"/>
+		<Bob_Column nSeq="101" szTable="F4102" szDict="FRMP"/>
+		<Bob_Column nSeq="102" szTable="F4102" szDict="THRP"/>
+		<Bob_Column nSeq="103" szTable="F4102" szDict="STDG"/>
+		<Bob_Column nSeq="104" szTable="F4102" szDict="FRGD"/>
+		<Bob_Column nSeq="105" szTable="F4102" szDict="THGD"/>
+		<Bob_Column nSeq="106" szTable="F4102" szDict="COTY"/>
+		<Bob_Column nSeq="107" szTable="F4102" szDict="MMPC"/>
+		<Bob_Column nSeq="108" szTable="F4102" szDict="PRGR"/>
+		<Bob_Column nSeq="109" szTable="F4102" szDict="RPRC"/>
+		<Bob_Column nSeq="110" szTable="F4102" szDict="ORPR"/>
+		<Bob_Column nSeq="111" szTable="F4102" szDict="BACK"/>
+		<Bob_Column nSeq="112" szTable="F4102" szDict="IFLA"/>
+		<Bob_Column nSeq="113" szTable="F4102" szDict="ABCS"/>
+		<Bob_Column nSeq="114" szTable="F4102" szDict="ABCM"/>
+		<Bob_Column nSeq="115" szTable="F4102" szDict="ABCI"/>
+		<Bob_Column nSeq="116" szTable="F4102" szDict="OVR"/>
+		<Bob_Column nSeq="117" szTable="F4102" szDict="SHCM"/>
+		<Bob_Column nSeq="118" szTable="F4102" szDict="CARS"/>
+		<Bob_Column nSeq="119" szTable="F4102" szDict="CARP"/>
+		<Bob_Column nSeq="120" szTable="F4102" szDict="SHCN"/>
+		<Bob_Column nSeq="121" szTable="F4102" szDict="STKT"/>
+		<Bob_Column nSeq="122" szTable="F4102" szDict="LNTY"/>
+		<Bob_Column nSeq="123" szTable="F4102" szDict="FIFO"/>
+		<Bob_Column nSeq="124" szTable="F4102" szDict="CYCL"/>
+		<Bob_Column nSeq="125" szTable="F4102" szDict="INMG"/>
+		<Bob_Column nSeq="126" szTable="F4102" szDict="WARR"/>
+		<Bob_Column nSeq="127" szTable="F4102" szDict="SRNR"/>
+		<Bob_Column nSeq="128" szTable="F4102" szDict="PCTM"/>
+		<Bob_Column nSeq="129" szTable="F4102" szDict="CMCG"/>
+		<Bob_Column nSeq="130" szTable="F4102" szDict="FUF1"/>
+		<Bob_Column nSeq="131" szTable="F4102" szDict="TX"/>
+		<Bob_Column nSeq="132" szTable="F4102" szDict="TAX1"/>
+		<Bob_Column nSeq="133" szTable="F4102" szDict="MPST"/>
+		<Bob_Column nSeq="134" szTable="F4102" szDict="MRPD"/>
+		<Bob_Column nSeq="135" szTable="F4102" szDict="MRPC"/>
+		<Bob_Column nSeq="136" szTable="F4102" szDict="UPC"/>
+		<Bob_Column nSeq="137" szTable="F4102" szDict="SNS"/>
+		<Bob_Column nSeq="138" szTable="F4102" szDict="MERL"/>
+		<Bob_Column nSeq="139" szTable="F4102" szDict="LTLV"/>
+		<Bob_Column nSeq="140" szTable="F4102" szDict="LTMF"/>
+		<Bob_Column nSeq="141" szTable="F4102" szDict="LTCM"/>
+		<Bob_Column nSeq="142" szTable="F4102" szDict="OPC"/>
+		<Bob_Column nSeq="143" szTable="F4102" szDict="OPV"/>
+		<Bob_Column nSeq="144" szTable="F4102" szDict="ACQ"/>
+		<Bob_Column nSeq="145" szTable="F4102" szDict="MLQ"/>
+		<Bob_Column nSeq="146" szTable="F4102" szDict="LTPU"/>
+		<Bob_Column nSeq="147" szTable="F4102" szDict="MPSP"/>
+		<Bob_Column nSeq="148" szTable="F4102" szDict="MRPP"/>
+		<Bob_Column nSeq="149" szTable="F4102" szDict="ITC"/>
+		<Bob_Column nSeq="150" szTable="F4102" szDict="ECO"/>
+		<Bob_Column nSeq="151" szTable="F4102" szDict="ECTY"/>
+		<Bob_Column nSeq="152" szTable="F4102" szDict="ECOD"/>
+		<Bob_Column nSeq="153" szTable="F4102" szDict="MTF1"/>
+		<Bob_Column nSeq="154" szTable="F4102" szDict="MTF2"/>
+		<Bob_Column nSeq="155" szTable="F4102" szDict="MTF3"/>
+		<Bob_Column nSeq="156" szTable="F4102" szDict="MTF4"/>
+		<Bob_Column nSeq="157" szTable="F4102" szDict="MTF5"/>
+		<Bob_Column nSeq="158" szTable="F4102" szDict="MOVD"/>
+		<Bob_Column nSeq="159" szTable="F4102" szDict="QUED"/>
+		<Bob_Column nSeq="160" szTable="F4102" szDict="SETL"/>
+		<Bob_Column nSeq="161" szTable="F4102" szDict="SRNK"/>
+		<Bob_Column nSeq="162" szTable="F4102" szDict="SRKF"/>
+		<Bob_Column nSeq="163" szTable="F4102" szDict="TIMB"/>
+		<Bob_Column nSeq="164" szTable="F4102" szDict="BQTY"/>
+		<Bob_Column nSeq="165" szTable="F4102" szDict="ORDW"/>
+		<Bob_Column nSeq="166" szTable="F4102" szDict="EXPD"/>
+		<Bob_Column nSeq="167" szTable="F4102" szDict="DEFD"/>
+		<Bob_Column nSeq="168" szTable="F4102" szDict="MULT"/>
+		<Bob_Column nSeq="169" szTable="F4102" szDict="SFLT"/>
+		<Bob_Column nSeq="170" szTable="F4102" szDict="MAKE"/>
+		<Bob_Column nSeq="171" szTable="F4102" szDict="LFDJ"/>
+		<Bob_Column nSeq="172" szTable="F4102" szDict="LLX"/>
+		<Bob_Column nSeq="173" szTable="F4102" szDict="CMGL"/>
+		<Bob_Column nSeq="174" szTable="F4102" szDict="URCD"/>
+		<Bob_Column nSeq="175" szTable="F4102" szDict="URDT"/>
+		<Bob_Column nSeq="176" szTable="F4102" szDict="URAT"/>
+		<Bob_Column nSeq="177" szTable="F4102" szDict="URAB"/>
+		<Bob_Column nSeq="178" szTable="F4102" szDict="URRF"/>
+		<Bob_Column nSeq="179" szTable="F4102" szDict="USER"/>
+		<Bob_Column nSeq="180" szTable="F4102" szDict="PID"/>
+		<Bob_Column nSeq="181" szTable="F4102" szDict="JOBN"/>
+		<Bob_Column nSeq="182" szTable="F4102" szDict="UPMJ"/>
+		<Bob_Column nSeq="183" szTable="F4102" szDict="TDAY"/>
+		<Bob_Column nSeq="184" szTable="F4102" szDict="TFLA"/>
+		<Bob_Column nSeq="185" szTable="F4102" szDict="COMH"/>
+		<Bob_Column nSeq="186" szTable="F4102" szDict="AVRT"/>
+		<Bob_Column nSeq="187" szTable="F4102" szDict="POC"/>
+		<Bob_Column nSeq="188" szTable="F4102" szDict="AING"/>
+		<Bob_Column nSeq="189" szTable="F4102" szDict="BBDD"/>
+		<Bob_Column nSeq="190" szTable="F4102" szDict="CMDM"/>
+		<Bob_Column nSeq="191" szTable="F4102" szDict="LECM"/>
+		<Bob_Column nSeq="192" szTable="F4102" szDict="LEDD"/>
+		<Bob_Column nSeq="193" szTable="F4102" szDict="MLOT"/>
+		<Bob_Column nSeq="194" szTable="F4102" szDict="PEFD"/>
+		<Bob_Column nSeq="195" szTable="F4102" szDict="SBDD"/>
+		<Bob_Column nSeq="196" szTable="F4102" szDict="U1DD"/>
+		<Bob_Column nSeq="197" szTable="F4102" szDict="U2DD"/>
+		<Bob_Column nSeq="198" szTable="F4102" szDict="U3DD"/>
+		<Bob_Column nSeq="199" szTable="F4102" szDict="U4DD"/>
+		<Bob_Column nSeq="200" szTable="F4102" szDict="U5DD"/>
+		<Bob_Column nSeq="201" szTable="F4102" szDict="XDCK"/>
+		<Bob_Column nSeq="202" szTable="F4102" szDict="LAF"/>
+		<Bob_Column nSeq="203" szTable="F4102" szDict="LTFM"/>
+		<Bob_Column nSeq="204" szTable="F4102" szDict="RWLA"/>
+		<Bob_Column nSeq="205" szTable="F4102" szDict="LNPA"/>
+		<Bob_Column nSeq="206" szTable="F4102" szDict="LOTC"/>
+		<Bob_Column nSeq="207" szTable="F4102" szDict="APSC"/>
+		<Bob_Column nSeq="208" szTable="F4102" szDict="PRI1"/>
+		<Bob_Column nSeq="209" szTable="F4102" szDict="PRI2"/>
+		<Bob_Column nSeq="210" szTable="F4102" szDict="LTCV"/>
+		<Bob_Column nSeq="211" szTable="F4102" szDict="ASHL"/>
+		<Bob_Column nSeq="212" szTable="F4102" szDict="OPTH"/>
+		<Bob_Column nSeq="213" szTable="F4102" szDict="CUTH"/>
+		<Bob_Column nSeq="214" szTable="F4102" szDict="UMTH"/>
+		<Bob_Column nSeq="215" szTable="F4102" szDict="LMFG"/>
+		<Bob_Column nSeq="216" szTable="F4102" szDict="LINE"/>
+		<Bob_Column nSeq="217" szTable="F4102" szDict="DFTPCT"/>
+		<Bob_Column nSeq="218" szTable="F4102" szDict="KBIT"/>
+		<Bob_Column nSeq="219" szTable="F4102" szDict="DFENDITM"/>
+		<Bob_Column nSeq="220" szTable="F4102" szDict="KANEXLL"/>
+		<Bob_Column nSeq="221" szTable="F4102" szDict="SCPSELL"/>
+		<Bob_Column nSeq="222" szTable="F4101" szDict="DSC1"/>
+		<Bob_Column nSeq="223" szTable="F4101" szDict="UOM1"/>
+	</Bob_ColumnCollection>
+	<Bob_JoinCollection>
+		<Bob_Join szFTable="F4102" szFDict="ITM" szPTable="F41021" szPDict="ITM"/>
+		<Bob_Join szFTable="F4102" szFDict="MCU" szPTable="F41021" szPDict="MCU"/>
+		<Bob_Join szFTable="F4102" szFDict="ITM" szPTable="F4101" szPDict="ITM"/>
+	</Bob_JoinCollection>
+</BSVW>
