@@ -41,7 +41,7 @@ public class OMWFieldJoinMapper implements Mapper<OMWFieldJoin>{
 		}
 		
 		fieldJoin.setOperator(fieldOperator);
-		return null;
+		return fieldJoin;
 	}
 
 	@Override

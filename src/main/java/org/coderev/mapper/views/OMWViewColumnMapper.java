@@ -14,7 +14,7 @@ public class OMWViewColumnMapper implements Mapper<OMWViewColumn> {
 		OMWViewColumn column = new OMWViewColumn();
 		column.setAlias(rules.get("szDict"));
 		column.setSequence(Integer.parseInt(rules.get("nSeq")));
-		column.isRequired(rules.get("bRequired").equals("1"));
+		column.isRequired(rules.containsKey("bRequired")&& rules.get("bRequired").equals("1"));
 		column.setTable(rules.get("szTable"));
 		return column;
 	}

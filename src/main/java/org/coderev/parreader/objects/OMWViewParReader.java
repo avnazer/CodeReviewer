@@ -25,9 +25,9 @@ public class OMWViewParReader {
 	private Document doc;
 	private OMWView view;
 	private OMWViewMapper viewMapper = new OMWViewMapper();
-	private OMWViewColumnMapper colMapper = new OMWViewColumnMapper();
-	private OMWTableJoinMapper joinMapper = new OMWTableJoinMapper();
-	private OMWFieldJoinMapper fieldJoinMapper = new OMWFieldJoinMapper();
+	private OMWViewColumnMapper colMapper;
+	private OMWTableJoinMapper joinMapper;
+	private OMWFieldJoinMapper fieldJoinMapper;
 	
 	public OMWViewParReader(String parPath) {
 		super();
@@ -91,6 +91,7 @@ public class OMWViewParReader {
 		Node node = nodes.item(0);
 		node = node.getFirstChild();
 		while (node != null) {
+			colMapper = new OMWViewColumnMapper();
 			this.loadColumn(node);
 			OMWViewColumn column = colMapper.map();
 			view.addColumn(column);
@@ -114,6 +115,8 @@ public class OMWViewParReader {
 		if(node != null) {
 			node = node.getFirstChild();
 			while (node != null) {
+				joinMapper = new OMWTableJoinMapper();
+				fieldJoinMapper = new OMWFieldJoinMapper();
 				this.loadJoin(node);
 
 				OMWTableJoin tableJoin = joinMapper.map();

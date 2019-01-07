@@ -72,7 +72,7 @@ public class OMWViewTest {
 		assertThat(column.getAlias(), equalTo("UOM"));
 		assertThat(column.getSequence(), equalTo(17));
 		assertThat(column.getTable(), equalTo("F57OK087"));
-		assert(column.isRequired());
+		assert(!column.isRequired());
 	}
 	
 	@Test
@@ -82,13 +82,12 @@ public class OMWViewTest {
 		assertThat(column.getAlias(), equalTo("MMEJ"));
 		assertThat(column.getSequence(), equalTo(35));
 		assertThat(column.getTable(), equalTo("F57OK087"));
-		assert(column.isRequired()); // not working????
+		assert(!column.isRequired());
 	}	
 	
 	@Test
 	public void testV57OK088() {
 		
-		//falla la parte de los campos del join.
         OMWView view = v57OK088Reader.load();
         assertThat(view.getJoins().size(), equalTo(2));
         
